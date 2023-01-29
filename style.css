@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+:root{
+    --Verydarkdesaturatedblue: hsl(238, 29%, 16%);
+    --Softred: hsl(14, 88%, 65%);
+/* Background gradient: */
+    --Softviolet: hsl(273, 75%, 66%);
+    --Softblue: hsl(240, 73%, 65%);
+
+     /* Text */
+
+    --Verydarkgrayishblue: hsl(237, 12%, 33%);
+    --Darkgrayishblue: hsl(240, 6%, 50%);
+
+    /* Dividers */
+    --Lightgrayishblue: hsl(240, 5%, 91%);
+
+    box-sizing: border-box;
+    font-size : 0.75em;
+
+}
+    *, ::after, ::before{
+        box-sizing: inherit;
+        margin : 0;
+        padding : 0;
+    }
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(hsl(0, 0%, 8%) , hsl(240, 73%, 65%));
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Kumbh Sans';
+    padding : 6em;
+    /* overflow: hidden; */
+}
+img{
+    width: 100%;
+}
+a{
+    text-decoration : none;
+    color :hsl(238, 29%, 16%);
+}
+.accordion{
+    background : white;
+    display: flex;
+    color :hsl(238, 29%, 16%);
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding : 5em;
+
+}
+.accordion > div {
+    flex : 1;
+}
+    
+.img-desktop{
+    position: relative;
+} 
+.img-desktop > img{
+    position: absolute;
+}
+.img-desktop > img:nth-child(1){
+    top : -245px;
+    left: -290px;
+    transform : scale(2)
+}
+.img-desktop > img:nth-child(2){
+    top: -150px;
+    left: -260px;
+    transform: scale(0.5);
+    z-index : 10;
+}
+.img-desktop > img:nth-child(3){
+    top : -165px;
+    left : -85px
+}
+
+
+.accordion__text{
+    font-size : 1.2rem;
+}
+.accordion__text h1{
+    margin-bottom : 1.3rem;
+}
+.accordion__text a{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin : 1rem 0;
+}
+.response{
+    height: 0;
+    /* visibility: hidden; */
+    overflow: hidden;
+    transition: height 500ms ease-in-out;
+}
+
+.revealed .response{
+    height: auto;
+    /* visibility: visible; */
+    margin-bottom : 0.5rem;
+}
+.revealed a{
+    font-weight: bold;
+}
+a:hover{
+    color : var(--Softred);
+}
+.revealed svg{
+    transform: rotateX(180deg);
+}
+button{
+    border : none;
+    outline : none;
+    background-color: white;
+}
+.question {
+    border-bottom : 1px solid var(--Lightgrayishblue);
+}
+.img-mobile{
+    display: none;
+}
+@media (max-width : 1075px) {
+    .img-desktop > img:nth-child(1){
+        top : -240px;
+        left : -290px;
+    }
+    .img-desktop > img:nth-child(2){
+        top : -135px;
+        left : -255px;
+        transform: scale(0.5);
+        z-index : 10;
+    }
+    .img-desktop > img:nth-child(3){
+        top : -160px;
+        left : -85px
+    }
+    
+}
+
+@media (max-width : 965px) {
+    .accordion{
+        flex-direction: column;
+        padding : 2em;
+    }
+    .img-desktop{
+        display: none;
+        position: unset;
+    }
+    .img-mobile{
+        display:block;
+        position: relative;
+    }
+    .img-mobile > img:nth-child(1){
+        position: absolute;
+        top : -110%;
+
+    }
+    body{
+        padding : 6em 6em;
+    }
+
+}
+
+@media (max-width : 445px) {
+    body{
+        padding : 6em 2em;
+    }
+}
